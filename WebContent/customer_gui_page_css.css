@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+
+.button-container {
+	margin-left: 30px;
+}
+
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+
+.button-container .input {
+    display: inline;
+    vertical-align: middle;
+    width: 45%;
+	text-align: center;
+	font-size: 16px;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color:white;
+	background-color: #4CAF50;
+	border:none;
+	border-radius: 10%;
+}
+.center{
+  margin: auto;
+  width: 100%;
+  
+  padding: 10px;
+}
+
+
+.center .cashbtn{
+	width:100%;
+}
+
+table.tblcenter{
+	margin-left: auto;
+	margin-right: auto;
+}

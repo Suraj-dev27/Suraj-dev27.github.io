@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Karnataka Bank</title>
+<link rel="stylesheet" href="index_page.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- ------------------------------------------------------------------------------------- -->
+<style>
+.ontop {
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	position: absolute;
+	background-color: #cccccc;
+	color: #aaaaaa;
+	opacity: 0.95;
+	filter: alpha(opacity = 50);
+}
+
+#popup {
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	color: #000000;
+	background-color: cyan;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 25px;
+	/* To align popup window at the center of screen*/
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -200px;
+    
+}
+
+/*carousel style*/
+/* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+</style>
+
+<script type="text/javascript">
+	function pop(div) {
+		document.getElementById(div).style.display = 'block';
+	}
+	function hide(div) {
+		document.getElementById(div).style.display = 'none';
+	}
+	//To detect escape button
+	/*document.onkeydown = function(evt) {
+		evt = evt || window.event;
+		if (evt.keyCode == 27) {
+			hide('popDiv');
+            
+		}
+	};
+    document.onkeydown = function(evt) {
+		evt = evt || window.event;
+		if (evt.keyCode == 27) {
+			hide('popDiv1');
+		}
+	};*/
+</script>
+</head>
+<body style="background-color: turquoise;">
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">KARNATAKA BANK</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  
+  
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="loan_page.jsp">Loans</a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" href="#login_form">Login</a>
+      </li>    
+    </ul>
+  </div> 
+  
+</nav>
+
+<!-- ------------------------------------------------------------------------------------- -->
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="karnatakabank4.jpg" alt="Indian Bank Awards" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="karnatakabank3.jpg" alt="Scheme Launching" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="karnatakabank2.jpg" alt="New Openning" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<!-- ------------------------------------------------------------------------------------- -->
+
+<div id="login_form" class="div_center container-fluid" style="margin-top:63px">
+
+<h3 align="center">If you are Bank Employee Login here</h3><br>
+<p style="text-align:center;">
+<button style="width:50%; background-color: #979; padding-top:10px; padding-bottom:10px; border:none; border-radius: 4px;;"><a href="#" onClick="pop('popDiv')" style="text-decoration: none; color:white; font-weight:bold;">Admin</a></button><br><br>
+</p>
+<h3 align="center">If you are Bank Customer Login here</h3><br>
+<p style="text-align:center;">
+<button style="width:50%; background-color: #979; padding-top:10px; padding-bottom:10px; border:none; border-radius: 4px;" ><a href="#" onClick="pop('popDiv1')" style="text-decoration: none; color:white; font-weight:bold;">Customer</a></button>
+</p>
+
+</div>
+
+<div id="popDiv" class="ontop">
+		<!--<table border="1" id="popup">
+			<tr>
+				<td>This is a admin popup window</td>
+			</tr>
+			<tr>
+				<td>Click Close OR escape button to close it <a href="#"
+					onClick="hide('popDiv')">Close</a>
+				</td>
+			</tr>
+		</table>-->
+        
+        
+        <div id="popup">
+        <div id="login_form" class="div_center container-fluid">
+        <form action="Admin_Validation_Servlet" method="post" style="margin-top:10px;">
+			<input type="hidden" name="command" value="verify_admin">
+			
+			<table class="table_center">
+				<tr>
+					<td>User ID</td>
+					<td><input type="text" name="userid" width="50px" required></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" width="50px"
+						required></td>
+				</tr>
+                <!--<tr>
+                <td clospan="2"><input style="background-color: #ac9362;" type="submit"
+				value="Login" width="40%"></td>
+                </tr>-->
+			</table>
+             
+			 <p style="text-align:center;"><input style="background-color: #ac9362; margin-top:20px;  width: 50%;" type="submit" value="Login"></p>
+		</form>
+        </div>
+        <p style="text-align:center;"><button style="background-color: #ac9362; width: 46%;" onClick="hide('popDiv')">Close</button></p>
+        </div>
+      
+	</div>
+    
+    
+    
+    
+    
+    
+    
+    <div id="popDiv1" class="ontop">
+		
+		<!--<table border="1" id="popup">
+			<tr>
+				<td>This is a customer popup window</td>
+			</tr>
+			<tr>
+				<td>Click Close OR escape button to close it <a href="#"
+					onClick="hide('popDiv1')">Close</a>
+				</td>
+			</tr>
+		</table>-->
+        
+        
+        <div id="popup">
+        <div id="login_form" class="div_center container-fluid">
+        <form action="Admin_Validation_Servlet" method="post" style="margin-top:10px;">
+			<input type="hidden" name="command" value="verify_customer">
+			
+			<table class="table_center">
+				<tr>
+					<td>Card No</td>
+					<td><input type="number" name="card_no" width="50px"
+						pattern="[0-9]{6}" title="Must contain 6 digit card number"
+						required></td>
+				</tr>
+				<tr>
+					<td>PIN No</td>
+					<td><input type="password" name="pin_no" width="50px"
+						pattern="[0-9]{4}" title="Must contain 4 digit pin number"
+						required></td>
+				</tr>
+			</table>
+             
+			 <p style="text-align:center;"><input style="background-color: #ac9362; margin-top:20px;  width: 50%;" type="submit" value="Login"></p>
+		</form>
+        </div>
+        <p style="text-align:center;"><button style="background-color: #ac9362; width: 46%;" onClick="hide('popDiv1')">Close</button></p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ---------------popup following forms onclick-------------------------- -->
+<!--	<div id="login_form" class="div_center container-fluid" style="margin-top:63px">
+		<form action="Admin_Validation_Servlet" method="post">
+			<input type="hidden" name="command" value="verify_admin">
+			<h5>If you are Bank Employee Login here</h5>
+			<table class="table_center">
+				<tr>
+					<td>Enter Your User ID</td>
+					<td><input type="text" name="userid" width="50px" required></td>
+				</tr>
+				<tr>
+					<td>Enter Your Password</td>
+					<td><input type="password" name="password" width="50px"
+						required></td>
+				</tr>
+			</table>
+			<br> <input style="background-color: #ac9362;" type="submit"
+				value="Login" width="40px">
+		</form>
+		<br>
+		<hr>
+		<br>
+		<form action="Admin_Validation_Servlet" method="post">
+			<input type="hidden" name="command" value="verify_customer">
+			<h5>If you are Bank Customer Login here</h5>
+			<table class="table_center">
+				<tr>
+					<td>Enter Your Card No</td>
+					<td><input type="number" name="card_no" width="50px"
+						pattern="[0-9]{6}" title="Must contain 6 digit card number"
+						required></td>
+				</tr>
+				<tr>
+					<td>Enter Your PIN</td>
+					<td><input type="password" name="pin_no" width="50px"
+						pattern="[0-9]{4}" title="Must contain 4 digit pin number"
+						required></td>
+				</tr>
+			</table>
+			<br> <input style="background-color: #ac9362;" type="submit"
+				value="Login" width="40px">
+		</form>
+	</div>-->
+
+</body>
+</html>

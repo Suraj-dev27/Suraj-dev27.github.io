@@ -1,0 +1,12 @@
+<Context>
+
+  <Resource name="jdbc/automatedtellermachine" 
+  			auth="Container" type="javax.sql.DataSource"
+               maxTotal="1000" maxIdle="1000" maxWaitMillis="10000"
+                username="webstudent" password="webstudent"
+               driverClassName="com.mysql.cj.jdbc.Driver"
+               url="jdbc:mysql://localhost:3307/automatedtellermachine?allowPublicKeyRetrieval=true"/>
+               
+              
+
+</Context>
